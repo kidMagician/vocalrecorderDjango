@@ -25,7 +25,7 @@ SECRET_KEY = '4po&_0*h#10o%ww2+dspvhb0u%@wyhu)szshuf_-559@qngifx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['10.0.2.2','127.0.0.1','192.168.10.164','192.168.0.4','10.138.27.241']
+ALLOWED_HOSTS = ['127.0.0.1','192.168.10.164','192.168.0.4','10.138.27.241','192.168.0.11','192.168.137.1','10.0.2.2','192.168.25.18']
 
 
 # Application definition
@@ -48,6 +48,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication'
     )
 }
 
@@ -118,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -135,3 +136,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = ''
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_POST = 587
+EMAIL_HOST_USER = 'ska1538'
+EMAIL_HOST_PASSWORD = 'ska89130'
+EMAIL_USE_TLS = True
+DEFAULT_EMAIL_FROM = 'sarath4coding@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
